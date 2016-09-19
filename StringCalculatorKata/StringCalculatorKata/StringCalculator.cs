@@ -22,11 +22,6 @@ namespace StringCalculatorKata
                 return int.Parse(numbers);
             }
 
-            if (numbers.Length == 3)
-            {
-                return int.Parse(numbers);
-            }
-
             return int.Parse(numbers.First().ToString()) + int.Parse(numbers.Last().ToString());
         }
     }
