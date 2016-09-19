@@ -13,3 +13,18 @@ c:\users\lukes\documents\visual studio 2013\Projects\StringCalculatorKata\String
 c:\users\lukes\documents\visual studio 2013\Projects\StringCalculatorKata\StringCalculatorUnitTests\obj\Debug\StringCalculatorUnitTests.pdb
 c:\users\lukes\documents\visual studio 2013\Projects\StringCalculatorKata\StringCalculatorUnitTests\bin\Debug\StringCalculatorKata.dll
 c:\users\lukes\documents\visual studio 2013\Projects\StringCalculatorKata\StringCalculatorUnitTests\bin\Debug\StringCalculatorKata.pdb
+C:\GitHub\CodeCraftKatas\StringCalculatorKata\StringCalculatorUnitTests\bin\Debug\StringCalculatorUnitTests.dll
+C:\GitHub\CodeCraftKatas\StringCalculatorKata\StringCalculatorUnitTests\bin\Debug\StringCalculatorUnitTests.pdb
+C:\GitHub\CodeCraftKatas\StringCalculatorKata\StringCalculatorUnitTests\bin\Debug\FluentAssertions.Core.dll
+C:\GitHub\CodeCraftKatas\StringCalculatorKata\StringCalculatorUnitTests\bin\Debug\FluentAssertions.dll
+C:\GitHub\CodeCraftKatas\StringCalculatorKata\StringCalculatorUnitTests\bin\Debug\nunit.framework.dll
+C:\GitHub\CodeCraftKatas\StringCalculatorKata\StringCalculatorUnitTests\bin\Debug\StringCalculatorKata.dll
+C:\GitHub\CodeCraftKatas\StringCalculatorKata\StringCalculatorUnitTests\bin\Debug\StringCalculatorKata.pdb
+C:\GitHub\CodeCraftKatas\StringCalculatorKata\StringCalculatorUnitTests\bin\Debug\FluentAssertions.pdb
+C:\GitHub\CodeCraftKatas\StringCalculatorKata\StringCalculatorUnitTests\bin\Debug\FluentAssertions.xml
+C:\GitHub\CodeCraftKatas\StringCalculatorKata\StringCalculatorUnitTests\bin\Debug\FluentAssertions.Core.pdb
+C:\GitHub\CodeCraftKatas\StringCalculatorKata\StringCalculatorUnitTests\bin\Debug\FluentAssertions.Core.xml
+C:\GitHub\CodeCraftKatas\StringCalculatorKata\StringCalculatorUnitTests\bin\Debug\nunit.framework.xml
+C:\GitHub\CodeCraftKatas\StringCalculatorKata\StringCalculatorUnitTests\obj\Debug\StringCalculatorUnitTests.csprojResolveAssemblyReference.cache
+C:\GitHub\CodeCraftKatas\StringCalculatorKata\StringCalculatorUnitTests\obj\Debug\StringCalculatorUnitTests.dll
+C:\GitHub\CodeCraftKatas\StringCalculatorKata\StringCalculatorUnitTests\obj\Debug\StringCalculatorUnitTests.pdb
