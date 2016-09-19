@@ -41,6 +41,7 @@ namespace StringCalculatorUnitTests
         [TestCase("1", 1)]
         [TestCase("2", 2)]
         [TestCase("22", 22)]
+        [TestCase("223", 223)]
         public void Return_Integer_Value_When_Add_Given_A_Single_Value_Input(string input, int integerRepresentation)
         {
             var result = StringCalculator.Add(input);
