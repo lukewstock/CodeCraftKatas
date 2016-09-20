@@ -52,6 +52,7 @@ namespace StringCalculatorUnitTests
         [TestCase("1,2", 3)]
         [TestCase("2,3", 5)]
         [TestCase("1,9", 10)]
+        [TestCase("11,9", 20)]
         public void Return_Sum_Of_Values_When_Add_Comma_Seperated_Input_With_Two_Values(string numbers, int expectedSum)
         {
             var result = StringCalculator.Add(numbers);

@@ -17,6 +17,11 @@ namespace StringCalculatorKata
                 return int.Parse(numbers);
             }
 
+            if (numbers.Split(',').Count() == 2)
+            {
+                return int.Parse(numbers.Split(',')[0]) + int.Parse(numbers.Split(',')[1]);
+            }
+
             return int.Parse(numbers.First().ToString()) + int.Parse(numbers.Last().ToString());
         }
     }
