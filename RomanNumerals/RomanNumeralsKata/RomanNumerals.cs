@@ -21,6 +21,11 @@ namespace RomanNumeralsKata
                 return arabicToRomanNumerals[number];
             }
 
+            if (number > 10)
+            {
+                return arabicToRomanNumerals[10] + Convert(number - 10);
+            }
+
             if (number > 5)
             {
                 return arabicToRomanNumerals[5] + Convert(number - 5);
