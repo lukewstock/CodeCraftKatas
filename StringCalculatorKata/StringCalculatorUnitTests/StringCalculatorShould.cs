@@ -59,5 +59,13 @@ namespace StringCalculatorUnitTests
 
             result.Should().Be(expectedSum);
         }
+
+        [TestCase("1,5,7", 13)]
+        public void Return_Sum_Of_Values_When_Add_Comma_Seperated_Input_With_More_Than_Two_Values(string numbers, int expectedSum)
+        {
+            var result = StringCalculator.Add(numbers);
+
+            result.Should().Be(expectedSum);
+        }
     }
 }
