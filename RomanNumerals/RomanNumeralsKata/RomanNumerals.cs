@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 
 namespace RomanNumeralsKata
@@ -23,9 +24,9 @@ namespace RomanNumeralsKata
                 return arabicToRomanNumerals[number];
             }
 
-            if (number > 50)
+            if (number > 40)
             {
-                return arabicToRomanNumerals[50] + Convert(number - 50);
+                return arabicToRomanNumerals[40] + Convert(number - 40);
             }
 
             if (number > 10)
@@ -37,7 +38,6 @@ namespace RomanNumeralsKata
             {
                 return arabicToRomanNumerals[5] + Convert(number - 5);
             }
-
 
             return arabicToRomanNumerals[1] + Convert(number - 1);
         }
