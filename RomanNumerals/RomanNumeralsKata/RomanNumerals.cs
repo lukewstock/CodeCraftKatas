@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Globalization;
 
 namespace RomanNumeralsKata
 {
@@ -11,8 +12,14 @@ namespace RomanNumeralsKata
             {
                 {1, "I"},
                 {4, "IV"},
-                {5, "V"}
+                {5, "V"},
+                {9, "IX"}
             };
+
+            if (number == 9)
+            {
+                return arabicToRomanNumerals[9];
+            }
 
             if (number > 5)
             {
