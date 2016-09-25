@@ -23,6 +23,12 @@ namespace RomanNumeralsUnitTests
         [TestCase(9, "IX")]
         [TestCase(10, "X")]
         [TestCase(11, "XI")]
+        [TestCase(12, "XII")]
+        [TestCase(14, "XIV")]
+        [TestCase(19, "XIX")]
+        [TestCase(20, "XX")]
+        [TestCase(30, "XXX")]
+        [TestCase(40, "XL")]
         public void Return_Roman_Numeral_When_Convert_Given_Arabic_Number(int number, string expectedNumeral)
         {
             var romanNumerals = RomanNumerals.Convert(number);
