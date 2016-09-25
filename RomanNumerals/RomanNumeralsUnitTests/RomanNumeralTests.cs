@@ -30,6 +30,7 @@ namespace RomanNumeralsUnitTests
         [TestCase(30, "XXX")]
         [TestCase(40, "XL")]
         [TestCase(50, "L")]
+        [TestCase(60, "LX")]
         public void Return_Roman_Numeral_When_Convert_Given_Arabic_Number(int number, string expectedNumeral)
         {
             var romanNumerals = RomanNumerals.Convert(number);
