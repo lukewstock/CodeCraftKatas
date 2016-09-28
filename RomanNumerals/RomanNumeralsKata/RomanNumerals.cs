@@ -24,22 +24,45 @@ namespace RomanNumeralsKata
                 return arabicToRomanNumerals[number];
             }
 
-            if (number > 40)
+            var result = string.Empty;
+
+            while (number >= 40)
             {
-                return arabicToRomanNumerals[40] + Convert(number - 40);
+                result += arabicToRomanNumerals[40];
+                number -= 40;
             }
 
-            if (number > 10)
+            while (number >= 10)
             {
-                return arabicToRomanNumerals[10] + Convert(number - 10);
+                result += arabicToRomanNumerals[10];
+                number -= 10;
             }
 
-            if (number > 5)
+            while (number >= 9)
             {
-                return arabicToRomanNumerals[5] + Convert(number - 5);
+                result += arabicToRomanNumerals[9];
+                number -= 9;
             }
 
-            return arabicToRomanNumerals[1] + Convert(number - 1);
+            while (number >= 5)
+            {
+                result += arabicToRomanNumerals[5];
+                number -= 5;
+            }
+
+            while (number >= 4)
+            {
+                result += arabicToRomanNumerals[4];
+                number -= 4;
+            }
+
+            while (number >= 1)
+            {
+                result += arabicToRomanNumerals[1];
+                number -= 1;
+            }
+
+            return result;
         }
     }
 }
