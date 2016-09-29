@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using FluentAssertions;
+using FluentAssertions.Primitives;
 using NUnit.Framework;
 
 namespace TicTacToeKata.Tests
@@ -20,36 +23,29 @@ namespace TicTacToeKata.Tests
         }
 
         [Test]
-        public void NotBeEqual_GivenOneNewGameAndOneGameWithTopLeftPlayed()
+        public void NotBeEqual_GivenOneNewGameAndPlayedGame()
         {
             var newGame = new TicTacToe();
             var playedGame = new TicTacToe();
-            playedGame.PlayTopLeft();
+            
+            playedGame.Play(Row.Top, Column.Right);
 
             newGame.Should().NotBe(playedGame);
         }
 
-        [Test]
-        public void NotBeEqual_GivenOneNewGameAndOneGameWithTopRightPlayed()
+        [TestCase(Row.Top, Column.Left, Row.Top, Column.Left, true)]
+        [TestCase(Row.Top, Column.Left, Row.Top, Column.Right, false)]
+        public void CompareTwoGamesForEquality(Row firstGameRow, Column firstGameColumn, Row secondGameRow, Column secondGameColumn, bool expectedEquality)
         {
-            var newGame = new TicTacToe();
-            var topRightGame = new TicTacToe();
-            topRightGame.PlayTopRight();
+            var firstGame = new TicTacToe();
+            var secondGame = new TicTacToe();
 
-            newGame.Should().NotBe(topRightGame);
-        }
+            firstGame.Play(firstGameRow, firstGameColumn);
+            secondGame.Play(secondGameRow, secondGameColumn);
 
-        [Test]
-        public void NotBeEqual_GivenOneTopLeftGameAndOneTopRightGame()
-        {
-            var topLeftGame = new TicTacToe();
-            topLeftGame.PlayTopLeft();
-            var topRightGame = new TicTacToe();
-            topRightGame.PlayTopRight();
+            var areEqual = firstGame.Equals(secondGame);
 
-            topLeftGame.Should().NotBe(topRightGame);
-
-
+            areEqual.Should().Be(expectedEquality);
         }
     }
 }
