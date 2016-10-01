@@ -27,7 +27,7 @@ namespace TicTacToeKata.Tests
         {
             var newGame = new TicTacToe();
             var playedGame = new TicTacToe();
-            
+
             playedGame.Play(Row.Top, Column.Right);
 
             newGame.Should().NotBe(playedGame);
@@ -35,6 +35,7 @@ namespace TicTacToeKata.Tests
 
         [TestCase(Row.Top, Column.Left, Row.Top, Column.Left, true)]
         [TestCase(Row.Top, Column.Left, Row.Top, Column.Right, false)]
+        [TestCase(Row.Top, Column.Right, Row.Top, Column.Middle, false)]
         public void CompareTwoGamesForEquality(Row firstGameRow, Column firstGameColumn, Row secondGameRow, Column secondGameColumn, bool expectedEquality)
         {
             var firstGame = new TicTacToe();

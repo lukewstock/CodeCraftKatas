@@ -1,4 +1,6 @@
-﻿namespace TicTacToeKata
+﻿using System.Linq;
+
+namespace TicTacToeKata
 {
     public enum Row
     {
@@ -14,12 +16,13 @@
 
     public class TicTacToe
     {
-        private bool _playedTopLeft;
-        private bool _playedTopRight;
+        private bool[] _playedTop = new[] {false, false, false};
 
         protected bool Equals(TicTacToe other)
         {
-            return _playedTopRight.Equals(other._playedTopRight) && _playedTopLeft.Equals(other._playedTopLeft);
+            return _playedTop
+                .Select((t, column) => t.Equals(other._playedTop[column]))
+                .All(comparisonResult => comparisonResult.Equals(true));
         }
 
         public override bool Equals(object obj)
@@ -32,10 +35,20 @@
 
         public override int GetHashCode()
         {
-            unchecked
+            return (_playedTop != null ? _playedTop.GetHashCode() : 0);
+        }
+
+        public void Play(Row row, Column column)
+        {
+            if (column == Column.Left)
             {
-                return (_playedTopRight.GetHashCode()*397) ^ _playedTopLeft.GetHashCode();
+                _playedTop[0] = true;
             }
+            if (column == Column.Middle)
+            {
+                _playedTop[1] = true;
+            }
+            _playedTop[2] = true;
         }
 
         public static bool operator ==(TicTacToe left, TicTacToe right)
@@ -46,16 +59,6 @@
         public static bool operator !=(TicTacToe left, TicTacToe right)
         {
             return !Equals(left, right);
-        }
-
-        public void Play(Row row, Column column)
-        {
-            if (column == Column.Left)
-            {
-                this._playedTopLeft = true;
-            }
-
-            this._playedTopRight = true;
         }
     }
 }
