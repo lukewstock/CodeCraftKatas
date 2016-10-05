@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System.Data;
+using System.Linq;
+using System.Runtime.Serialization.Formatters;
 
 namespace TicTacToeKata
 {
@@ -18,6 +20,7 @@ namespace TicTacToeKata
     public class TicTacToe
     {
         private bool[] _playedTop = new[] {false, false, false};
+        private bool[] _playedMiddleRow = new[] {false, false, false};
 
         protected bool Equals(TicTacToe other)
         {
@@ -41,7 +44,12 @@ namespace TicTacToeKata
 
         public void Play(Row row, Column column)
         {
-            _playedTop[(int) column] = true;
+            if (row == Row.Top)
+            {
+                _playedTop[(int) column] = true;
+            }
+
+            _playedMiddleRow[(int) column] = true;
         }
 
         public static bool operator ==(TicTacToe left, TicTacToe right)
