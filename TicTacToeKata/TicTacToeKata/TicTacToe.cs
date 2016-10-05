@@ -26,7 +26,11 @@ namespace TicTacToeKata
         {
             return _playedTop
                 .Select((t, column) => t.Equals(other._playedTop[column]))
-                .All(comparisonResult => comparisonResult.Equals(true));
+                .All(comparisonResult => comparisonResult.Equals(true))
+                &&
+                _playedMiddleRow
+                .Select((t, column) => t.Equals(other._playedMiddleRow[column]))
+                .All((compariosonResult => compariosonResult.Equals(true)));
         }
 
         public override bool Equals(object obj)
