@@ -53,5 +53,18 @@ namespace TicTacToeKata.Tests
 
             areEqual.Should().Be(expectedEquality);
         }
+
+        [Test]
+        public void NotUpdate_WhenPlaying_GivenAPreviouslyPlayedPosition()
+        {
+            var controlGame = new TicTacToe();
+            var playedGame = new TicTacToe();
+            controlGame.Play(Row.Top, Column.Left);
+            playedGame.Play(Row.Top, Column.Left);
+            
+            playedGame.Play(Row.Top, Column.Left);
+
+            playedGame.Should().Be(controlGame);
+        }
     }
 }
