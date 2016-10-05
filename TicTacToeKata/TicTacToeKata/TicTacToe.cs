@@ -22,6 +22,7 @@ namespace TicTacToeKata
     {
         private bool[] _playedTop = new[] {false, false, false};
         private bool[] _playedMiddleRow = new[] {false, false, false};
+        private bool[] _playedBottomRow = new []{false, false, false};
 
         protected bool Equals(TicTacToe other)
         {
@@ -31,7 +32,11 @@ namespace TicTacToeKata
                 &&
                 _playedMiddleRow
                 .Select((t, column) => t.Equals(other._playedMiddleRow[column]))
-                .All((compariosonResult => compariosonResult.Equals(true)));
+                .All((compariosonResult => compariosonResult.Equals(true)))
+                &&
+                _playedBottomRow
+                .Select((t, column) => t.Equals(other._playedBottomRow[column]))
+                .All((comparionResult => comparionResult.Equals(true)));
         }
 
         public override bool Equals(object obj)
@@ -57,6 +62,11 @@ namespace TicTacToeKata
             if (row == Row.Middle)
             {
                 _playedMiddleRow[(int) column] = true;
+            }
+
+            if (row == Row.Bottom)
+            {
+                _playedBottomRow[(int) column] = true;
             }
         }
 

@@ -40,6 +40,7 @@ namespace TicTacToeKata.Tests
         [TestCase(Row.Middle, Column.Right, Row.Middle, Column.Left, false)]
         [TestCase(Row.Middle, Column.Middle, Row.Middle, Column.Left, false)]
         [TestCase(Row.Bottom, Column.Left, Row.Middle, Column.Left, false)]
+        [TestCase(Row.Bottom, Column.Left, Row.Bottom, Column.Middle, false)]
         public void CompareTwoGamesForEquality(Row firstGameRow, Column firstGameColumn, Row secondGameRow, Column secondGameColumn, bool expectedEquality)
         {
             var firstGame = new TicTacToe();
