@@ -13,30 +13,34 @@ namespace TicTacToeKata
 
     public enum Column
     {
-        Left = 0,
-        Middle = 1,
-        Right = 2
+        Left,
+        Middle,
+        Right
     }
 
     public class TicTacToe
     {
-        private bool[] _playedTop = new[] {false, false, false};
-        private bool[] _playedMiddleRow = new[] {false, false, false};
-        private bool[] _playedBottomRow = new []{false, false, false};
+        private readonly bool[,] _playedBoard = new bool[3, 3]
+        {
+            {false, false, false},
+            {false, false, false},
+            {false, false, false}
+        };
 
         protected bool Equals(TicTacToe other)
         {
-            return _playedTop
-                .Select((t, column) => t.Equals(other._playedTop[column]))
-                .All(comparisonResult => comparisonResult.Equals(true))
-                &&
-                _playedMiddleRow
-                .Select((t, column) => t.Equals(other._playedMiddleRow[column]))
-                .All((compariosonResult => compariosonResult.Equals(true)))
-                &&
-                _playedBottomRow
-                .Select((t, column) => t.Equals(other._playedBottomRow[column]))
-                .All((comparionResult => comparionResult.Equals(true)));
+            for (var row = 0; row < 3; row++)
+            {
+                for (var column = 0; column < 3; column++)
+                {
+                    if (_playedBoard[row, column] != other._playedBoard[row, column])
+                    {
+                        return false;
+                    }
+                }
+            }
+
+            return true;
         }
 
         public override bool Equals(object obj)
@@ -49,25 +53,12 @@ namespace TicTacToeKata
 
         public override int GetHashCode()
         {
-            return (_playedTop != null ? _playedTop.GetHashCode() : 0);
+            return (_playedBoard != null ? _playedBoard.GetHashCode() : 0);
         }
 
         public void Play(Row row, Column column)
         {
-            if (row == Row.Top)
-            {
-                _playedTop[(int) column] = true;
-            }
-
-            if (row == Row.Middle)
-            {
-                _playedMiddleRow[(int) column] = true;
-            }
-
-            if (row == Row.Bottom)
-            {
-                _playedBottomRow[(int) column] = true;
-            }
+            _playedBoard[(int)row, (int)column] = true;
         }
 
         public static bool operator ==(TicTacToe left, TicTacToe right)
