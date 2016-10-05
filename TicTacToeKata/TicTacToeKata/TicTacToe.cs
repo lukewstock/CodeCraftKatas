@@ -7,7 +7,8 @@ namespace TicTacToeKata
     public enum Row
     {
         Top,
-        Middle
+        Middle,
+        Bottom
     }
 
     public enum Column
@@ -53,7 +54,10 @@ namespace TicTacToeKata
                 _playedTop[(int) column] = true;
             }
 
-            _playedMiddleRow[(int) column] = true;
+            if (row == Row.Middle)
+            {
+                _playedMiddleRow[(int) column] = true;
+            }
         }
 
         public static bool operator ==(TicTacToe left, TicTacToe right)
