@@ -44,11 +44,16 @@ namespace TicTacToeKata
             {
                 _playedTop[0] = true;
             }
+
             if (column == Column.Middle)
             {
                 _playedTop[1] = true;
             }
-            _playedTop[2] = true;
+
+            if (column == Column.Right)
+            {
+                _playedTop[2] = true;
+            }
         }
 
         public static bool operator ==(TicTacToe left, TicTacToe right)
