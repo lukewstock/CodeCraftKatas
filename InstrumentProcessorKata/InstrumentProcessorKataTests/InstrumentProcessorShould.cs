@@ -36,5 +36,21 @@ namespace InstrumentProcessorKataTests
 
             _instrument.Verify(i => i.Execute(taskName), Times.Once);
         }
+
+        [Test]
+        public void FinishTask_WhenProcessing_GivenFinishEventIsRaised()
+        {
+            const string taskName = "task";
+            _taskDispatcher
+                .Setup(td => td.GetTask())
+                .Returns(taskName);
+            _instrument
+                .Setup(i => i.Execute(taskName))
+                .Raises(i => i.Finished += null, EventArgs.Empty);
+            
+            _processor.Process();
+
+            _taskDispatcher.Verify(td => td.FinishTask(taskName), Times.Once);
+        }
     }
 }

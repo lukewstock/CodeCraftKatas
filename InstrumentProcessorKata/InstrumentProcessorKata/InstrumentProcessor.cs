@@ -1,14 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace InstrumentProcessorKata
+﻿namespace InstrumentProcessorKata
 {
     public class InstrumentProcessor : IInstrumentProcessor
     {
-        private IInstrument _instrument;
-        private ITaskDispatcher _taskDispatcher;
+        private readonly IInstrument _instrument;
+        private readonly ITaskDispatcher _taskDispatcher;
 
         public InstrumentProcessor(IInstrument instrument, ITaskDispatcher taskDispatcher)
         {
@@ -19,6 +14,8 @@ namespace InstrumentProcessorKata
         public void Process()
         {
             var task = _taskDispatcher.GetTask();
+
+            _instrument.Finished += (sender, args) => _taskDispatcher.FinishTask(task);
 
             _instrument.Execute(task);
         }
