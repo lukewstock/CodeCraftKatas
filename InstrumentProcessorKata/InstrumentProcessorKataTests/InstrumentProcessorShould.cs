@@ -15,13 +15,15 @@ namespace InstrumentProcessorKataTests
         private Mock<IInstrument> _instrument;
         private InstrumentProcessor _processor;
         private Mock<ITaskDispatcher> _taskDispatcher;
+        private Mock<IConsoleWrapper> _console;
 
         [SetUp]
         public void Setup()
         {
             _taskDispatcher = new Mock<ITaskDispatcher>();
             _instrument = new Mock<IInstrument>();
-            _processor = new InstrumentProcessor(_instrument.Object, _taskDispatcher.Object);
+            _console = new Mock<IConsoleWrapper>();
+            _processor = new InstrumentProcessor(_instrument.Object, _taskDispatcher.Object, _console.Object);
         }
 
         [TestCase("task1")]
@@ -52,5 +54,22 @@ namespace InstrumentProcessorKataTests
 
             _taskDispatcher.Verify(td => td.FinishTask(taskName), Times.Once);
         }
+
+        [Test]
+        public void WriteAnErrorMessage_WhenProcessing_GivenErrorEventIsRaised()
+        {
+            const string ERROR_MESSAGE = "Error occurred";
+            const string TASK_NAME = "task";
+            _taskDispatcher
+                .Setup(td => td.GetTask())
+                .Returns(TASK_NAME);
+            _instrument
+                .Setup(i => i.Execute(TASK_NAME))
+                .Raises(i => i.Error += null, EventArgs.Empty);
+
+            _processor.Process();
+
+            _console.Verify(console => console.WriteLine(ERROR_MESSAGE));
+        }
     }
-}
+}   
