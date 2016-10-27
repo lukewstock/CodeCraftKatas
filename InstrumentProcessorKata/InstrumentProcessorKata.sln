@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstrumentProcessorKata", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstrumentProcessorKataTests", "InstrumentProcessorKataTests\InstrumentProcessorKataTests.csproj", "{52D6CCFB-F6AE-475E-93A2-C06B990805C5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharacterCopierKata", "CharacterCopierKata\CharacterCopierKata.csproj", "{CE98C4CA-E640-43F8-930F-6147A1B9D518}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharacterCopierTests", "CharacterCopierShould\CharacterCopierTests.csproj", "{CE0904A8-5162-4721-B62B-A4A82728CE8B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{52D6CCFB-F6AE-475E-93A2-C06B990805C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52D6CCFB-F6AE-475E-93A2-C06B990805C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52D6CCFB-F6AE-475E-93A2-C06B990805C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE98C4CA-E640-43F8-930F-6147A1B9D518}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE98C4CA-E640-43F8-930F-6147A1B9D518}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE98C4CA-E640-43F8-930F-6147A1B9D518}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE98C4CA-E640-43F8-930F-6147A1B9D518}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE0904A8-5162-4721-B62B-A4A82728CE8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE0904A8-5162-4721-B62B-A4A82728CE8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE0904A8-5162-4721-B62B-A4A82728CE8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE0904A8-5162-4721-B62B-A4A82728CE8B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

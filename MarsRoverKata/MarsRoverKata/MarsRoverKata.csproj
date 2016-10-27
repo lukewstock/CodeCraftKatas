@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{22F9022C-BC44-4D68-8FBC-7791EFDB48C7}</ProjectGuid>
+    <ProjectGuid>{B01FFFBE-EAB1-4D11-AA7B-52760D270CFE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>InstrumentProcessorKata</RootNamespace>
-    <AssemblyName>InstrumentProcessorKata</AssemblyName>
+    <RootNamespace>MarsRoverKata</RootNamespace>
+    <AssemblyName>MarsRoverKata</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -39,12 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConsoleWrapper.cs" />
-    <Compile Include="IConsoleWrapper.cs" />
-    <Compile Include="IInstrument.cs" />
-    <Compile Include="InstrumentProcessor.cs" />
-    <Compile Include="IInstrumentProcessor.cs" />
-    <Compile Include="ITaskDispatcher.cs" />
+    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

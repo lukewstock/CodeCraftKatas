@@ -71,5 +71,8 @@ namespace InstrumentProcessorKataTests
 
             _console.Verify(console => console.WriteLine(ERROR_MESSAGE));
         }
+
+//        [Test]
+//        public void ShouldThrowExceptio
     }
 }   
