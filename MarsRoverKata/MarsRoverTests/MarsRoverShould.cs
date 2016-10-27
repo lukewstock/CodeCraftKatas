@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FluentAssertions;
+﻿using FluentAssertions;
 using NUnit.Framework;
 
 namespace MarsRoverTests
@@ -12,15 +7,20 @@ namespace MarsRoverTests
     public class MarsRoverShould
     {
         [Test]
-        public void a()
+        public void ReturnPosition()
         {
-            new MarsRover().GetP().Should().Be("1 1 N");
+            var marsRover = new MarsRover();
+            var expectedPosition = "1 1 N";
+
+            var position = marsRover.GetPosition();
+
+            position.Should().Be(expectedPosition);
         }
     }
 
     public class MarsRover
     {
-        public string GetP()
+        public string GetPosition()
         {
             return "1 1 N";
         }
