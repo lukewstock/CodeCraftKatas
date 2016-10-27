@@ -10,7 +10,7 @@ namespace MarsRoverTests
     [TestFixture]
     public class MarsRoverShould
     {
-        [Test]
+        
 
     }
 }
