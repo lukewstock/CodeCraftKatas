@@ -17,4 +17,4 @@ namespace MarsRoverTests
             position.Should().Be(expectedPosition);
         }
     }
-}
+} 
