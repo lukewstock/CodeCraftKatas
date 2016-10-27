@@ -12,17 +12,9 @@ namespace MarsRoverTests
             var marsRover = new MarsRover();
             var expectedPosition = "1 1 N";
 
-            var position = marsRover.GetPosition();
+            var position = marsRover.GetCurrentPosition();
 
             position.Should().Be(expectedPosition);
-        }
-    }
-
-    public class MarsRover
-    {
-        public string GetPosition()
-        {
-            return "1 1 N";
         }
     }
 }
