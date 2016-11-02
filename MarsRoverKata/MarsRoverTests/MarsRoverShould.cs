@@ -18,12 +18,11 @@ namespace MarsRoverTests
             currentPosition.Should().Be(startingPosition);
         }
 
-        [TestCase("R", "1 1 E")]
-        [TestCase("L", "1 1 W")]
-        [TestCase("M", "1 2 N")]
-        public void ReturnNewPostionWhenMoving(string instructions, string expectedPosition)
+        [TestCase("1 1 N", "R", "1 1 E")]
+        [TestCase("1 1 N", "L", "1 1 W")]
+        [TestCase("1 1 N", "M", "1 2 N")]
+        public void ReturnNewPostionWhenMoving(string startingPosition, string instructions, string expectedPosition)
         {
-            const string startingPosition = "1 1 N";
             var marsRover = new MarsRover(startingPosition);
 
             marsRover.Move(instructions);
