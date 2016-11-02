@@ -23,5 +23,14 @@ namespace MarsRoverTests
         {
             new MarsRover("1 2 N").GetCurrentPosition().Should().Be("1 2 N");
         }
+
+        [Test]
+        public void x()
+        {
+            var marsRover = new MarsRover("1 1 N");
+            marsRover.Move("R");
+
+            marsRover.GetCurrentPosition().Should().Be("1 1 E");
+        }
     }
 } 
