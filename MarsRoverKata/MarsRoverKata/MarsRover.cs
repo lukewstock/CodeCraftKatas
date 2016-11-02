@@ -26,6 +26,11 @@
             {
                 _startingPosition = "1 1 W";
             }
+
+            if (instructions == "M")
+            {
+                _startingPosition = "1 2 N";
+            }
         }
     }
 }
