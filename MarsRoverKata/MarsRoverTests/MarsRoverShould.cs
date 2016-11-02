@@ -21,6 +21,7 @@ namespace MarsRoverTests
         [TestCase("1 1 N", "R", "1 1 E")]
         [TestCase("1 1 N", "L", "1 1 W")]
         [TestCase("1 1 N", "M", "1 2 N")]
+        [TestCase("1 1 E", "M", "2 1 E")]
         public void ReturnNewPostionWhenMoving(string startingPosition, string instructions, string expectedPosition)
         {
             var marsRover = new MarsRover(startingPosition);
