@@ -19,7 +19,20 @@
         {
             if (instructions == "R")
             {
-                _startingPosition = "1 1 E";
+                if (_startingPosition == "1 1 S")
+                {
+                    _startingPosition = "1 1 W";
+                }
+
+                if (_startingPosition == "1 1 E")
+                {
+                    _startingPosition = "1 1 S";
+                }
+
+                if (_startingPosition == "1 1 N")
+                {
+                    _startingPosition = "1 1 E";
+                }
             }
 
             if (instructions == "L")

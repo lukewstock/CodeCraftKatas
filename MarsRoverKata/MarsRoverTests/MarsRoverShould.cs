@@ -19,6 +19,8 @@ namespace MarsRoverTests
         }
 
         [TestCase("1 1 N", "R", "1 1 E")]
+        [TestCase("1 1 E", "R", "1 1 S")]
+        [TestCase("1 1 S", "R", "1 1 W")]
         [TestCase("1 1 N", "L", "1 1 W")]
         [TestCase("1 1 N", "M", "1 2 N")]
         [TestCase("1 1 E", "M", "2 1 E")]
