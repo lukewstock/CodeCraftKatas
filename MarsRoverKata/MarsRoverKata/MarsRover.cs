@@ -15,7 +15,7 @@
             return _startingPosition;
         }
 
-        public void Move(string s)
+        public void Move(string instructions)
         {
             _startingPosition = "1 1 E";
         }

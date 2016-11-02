@@ -21,11 +21,13 @@ namespace MarsRoverTests
         [Test]
         public void ReturnNewPostionWhenMoving()
         {
-            var marsRover = new MarsRover("1 1 N");
+            const string startingPosition = "1 1 N";
+            const string expectedPosition = "1 1 E";
+            var marsRover = new MarsRover(startingPosition);
 
             marsRover.Move("R");
 
-            marsRover.GetCurrentPosition().Should().Be("1 1 E");
+            marsRover.GetCurrentPosition().Should().Be(expectedPosition);
         }
     }
 } 
