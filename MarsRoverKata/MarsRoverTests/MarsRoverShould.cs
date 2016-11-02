@@ -19,7 +19,7 @@ namespace MarsRoverTests
         }
 
         [Test]
-        public void rerutnP()
+        public void ReturnStartingPositionWhenNoInstructionsHaveBeenProcessed()
         {
             new MarsRover("1 2 N").GetCurrentPosition().Should().Be("1 2 N");
         }

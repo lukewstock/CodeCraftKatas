@@ -2,11 +2,11 @@
 {
     public class MarsRover
     {
-        private readonly string _s;
+        private readonly string _startingPosition;
 
-        public MarsRover(string s)
+        public MarsRover(string startingPosition)
         {
-            _s = s;
+            _startingPosition = startingPosition;
             
         }
 
@@ -17,7 +17,7 @@
 
         public string GetCurrentPosition()
         {
-            return _s;
+            return _startingPosition;
         }
     }
 }
