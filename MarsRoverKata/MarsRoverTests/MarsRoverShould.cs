@@ -10,12 +10,18 @@ namespace MarsRoverTests
         [Test]
         public void ReturnPosition()
         {
-            var marsRover = new MarsRover();
+            var marsRover = new MarsRover("1 1 N");
             var expectedPosition = "1 1 N";
 
             var position = marsRover.GetCurrentPosition();
 
             position.Should().Be(expectedPosition);
+        }
+
+        [Test]
+        public void rerutnP()
+        {
+            new MarsRover("1 2 N").GetCurrentPosition().Should().Be("1 2 N");
         }
     }
 } 
