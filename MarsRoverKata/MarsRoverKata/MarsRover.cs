@@ -17,7 +17,15 @@
 
         public void Move(string instructions)
         {
-            _startingPosition = "1 1 E";
+            if (instructions == "R")
+            {
+                _startingPosition = "1 1 E";
+            }
+
+            if (instructions == "L")
+            {
+                _startingPosition = "1 1 W";
+            }
         }
     }
 }
