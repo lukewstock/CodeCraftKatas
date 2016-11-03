@@ -21,6 +21,11 @@ namespace MarsRoverKata
             {WEST, NORTH}
         };
 
+        private readonly Dictionary<string, string> _rotateLeftFrom = new Dictionary<string, string>
+        {
+            {EAST, NORTH}
+        };
+
         public MarsRover(string startingPosition)
         {
             _currentPosition = startingPosition;
@@ -51,6 +56,7 @@ namespace MarsRoverKata
 
         private void MoveForwardOneSpace()
         {
+            
             if (_currentPosition == "1 1 E")
             {
                 _currentPosition = "2 1 E";
@@ -63,9 +69,13 @@ namespace MarsRoverKata
 
         private void RotateLeft()
         {
+            var currentOrientation = _currentPosition[4].ToString();
+
             if (_currentPosition == "1 1 E")
             {
-                _currentPosition = "1 1 N";
+                var newOrientation = _rotateLeftFrom[currentOrientation];
+                var newPosition = string.Format("1 1 {0}", newOrientation);
+                _currentPosition = newPosition;
             }
             else
             {
