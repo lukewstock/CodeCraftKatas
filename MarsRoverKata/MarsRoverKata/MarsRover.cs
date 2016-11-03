@@ -5,16 +5,16 @@
         private const string ROTATE_RIGHT = "R";
         private const string ROTATE_LEFT = "L";
         private const string MOVE_FORWARD = "M";
-        private string _startingPosition;
+        private string _currentPosition;
 
         public MarsRover(string startingPosition)
         {
-            _startingPosition = startingPosition;
+            _currentPosition = startingPosition;
         }
 
         public string GetCurrentPosition()
         {
-            return _startingPosition;
+            return _currentPosition;
         }
 
         public void Move(string instructions)
@@ -37,46 +37,47 @@
 
         private void MoveForwardOneSpace()
         {
-            if (_startingPosition == "1 1 E")
+            if (_currentPosition == "1 1 E")
             {
-                _startingPosition = "2 1 E";
+                _currentPosition = "2 1 E";
             }
             else
             {
-                _startingPosition = "1 2 N";
+                _currentPosition = "1 2 N";
             }
         }
 
         private void RotateLeft()
         {
-            _startingPosition = "1 1 W";
+            _currentPosition = "1 1 W";
         }
 
         private void RotateRight()
         {
             var newPosition = string.Empty;
 
-            if (_startingPosition == "1 1 S")
+            var currentOrientation = "S";
+            if (_currentPosition == string.Format("1 1 {0}", currentOrientation))
             {
                 newPosition = "1 1 W";
             }
 
-            if (_startingPosition == "1 1 E")
+            if (_currentPosition == "1 1 E")
             {
                 newPosition = "1 1 S";
             }
 
-            if (_startingPosition == "1 1 N")
+            if (_currentPosition == "1 1 N")
             {
                 newPosition = "1 1 E";
             }
 
-            if (_startingPosition == "1 1 W")
+            if (_currentPosition == "1 1 W")
             {
                 newPosition = "1 1 N";
             }
 
-            _startingPosition = newPosition;
+            _currentPosition = newPosition;
         }
     }
 }
