@@ -5,6 +5,10 @@
         private const string ROTATE_RIGHT = "R";
         private const string ROTATE_LEFT = "L";
         private const string MOVE_FORWARD = "M";
+        private const string SOUTH = "S";
+        private const string EAST = "E";
+        private const string NORTH = "N";
+        private const string WEST = "W";
         private string _currentPosition;
 
         public MarsRover(string startingPosition)
@@ -54,36 +58,30 @@
 
         private void RotateRight()
         {
-            var newPosition = string.Empty;
+            var newOrientation = string.Empty;
+            var currentOrientation = _currentPosition[4].ToString();
 
-            var south = "S";
-            if (_currentPosition == string.Format("1 1 {0}", south))
+            if (currentOrientation == SOUTH)
             {
-                var newOrientation = "W";
-                newPosition = string.Format("1 1 {0}", newOrientation);
+                newOrientation = WEST;
             }
 
-            var east = "E";
-            if (_currentPosition == string.Format("1 1 {0}", east))
+            if (currentOrientation == EAST)
             {
-                var newOrientation = "S";
-                newPosition = string.Format("1 1 {0}", newOrientation);
+                newOrientation = SOUTH;
             }
 
-            var north = "N";
-            if (_currentPosition == string.Format("1 1 {0}", north))
+            if (currentOrientation == NORTH)
             {
-                var newOrientation = "E";
-                newPosition = string.Format("1 1 {0}", newOrientation);
+                newOrientation = EAST;
             }
 
-            var west = "W";
-            if (_currentPosition == string.Format("1 1 {0}", west))
+            if (currentOrientation == WEST)
             {
-                var newOrientation = "N";
-                newPosition = string.Format("1 1 {0}", newOrientation);
+                newOrientation = NORTH;
             }
 
+            var newPosition = string.Format("1 1 {0}", newOrientation);
             _currentPosition = newPosition;
         }
     }
