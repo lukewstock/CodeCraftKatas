@@ -56,23 +56,26 @@
         {
             var newPosition = string.Empty;
 
-            var currentOrientation = "S";
-            if (_currentPosition == string.Format("1 1 {0}", currentOrientation))
+            var south = "S";
+            if (_currentPosition == string.Format("1 1 {0}", south))
             {
                 newPosition = "1 1 W";
             }
 
-            if (_currentPosition == "1 1 E")
+            var east = "E";
+            if (_currentPosition == string.Format("1 1 {0}", east))
             {
                 newPosition = "1 1 S";
             }
 
-            if (_currentPosition == "1 1 N")
+            var north = "N";
+            if (_currentPosition == string.Format("1 1 {0}", north))
             {
                 newPosition = "1 1 E";
             }
 
-            if (_currentPosition == "1 1 W")
+            var west = "W";
+            if (_currentPosition == string.Format("1 1 {0}", west))
             {
                 newPosition = "1 1 N";
             }
