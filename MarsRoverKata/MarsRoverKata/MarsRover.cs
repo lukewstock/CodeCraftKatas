@@ -1,4 +1,6 @@
-﻿namespace MarsRoverKata
+﻿using System.Collections.Generic;
+
+namespace MarsRoverKata
 {
     public class MarsRover
     {
@@ -10,6 +12,14 @@
         private const string NORTH = "N";
         private const string WEST = "W";
         private string _currentPosition;
+
+        private readonly Dictionary<string, string> _rotateRightFrom = new Dictionary<string, string>
+        {
+            {SOUTH, WEST},
+            {EAST, SOUTH},
+            {NORTH, EAST},
+            {WEST, NORTH}
+        };
 
         public MarsRover(string startingPosition)
         {
@@ -58,28 +68,9 @@
 
         private void RotateRight()
         {
-            var newOrientation = string.Empty;
             var currentOrientation = _currentPosition[4].ToString();
 
-            if (currentOrientation == SOUTH)
-            {
-                newOrientation = WEST;
-            }
-
-            if (currentOrientation == EAST)
-            {
-                newOrientation = SOUTH;
-            }
-
-            if (currentOrientation == NORTH)
-            {
-                newOrientation = EAST;
-            }
-
-            if (currentOrientation == WEST)
-            {
-                newOrientation = NORTH;
-            }
+            var newOrientation = _rotateRightFrom[currentOrientation];
 
             var newPosition = string.Format("1 1 {0}", newOrientation);
             _currentPosition = newPosition;
