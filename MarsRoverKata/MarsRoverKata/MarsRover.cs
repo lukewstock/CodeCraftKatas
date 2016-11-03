@@ -19,20 +19,29 @@
         {
             if (instructions == "R")
             {
+                var newPosition = string.Empty;
+
                 if (_startingPosition == "1 1 S")
                 {
-                    _startingPosition = "1 1 W";
+                    newPosition = "1 1 W";
                 }
 
                 if (_startingPosition == "1 1 E")
                 {
-                    _startingPosition = "1 1 S";
+                    newPosition = "1 1 S";
                 }
 
                 if (_startingPosition == "1 1 N")
                 {
-                    _startingPosition = "1 1 E";
+                    newPosition = "1 1 E";
                 }
+
+                if (_startingPosition == "1 1 W")
+                {
+                    newPosition = "1 1 N";
+                }
+
+                _startingPosition = newPosition;
             }
 
             if (instructions == "L")
