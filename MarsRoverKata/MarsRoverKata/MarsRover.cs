@@ -74,31 +74,9 @@ namespace MarsRoverKata
         {
             var currentOrientation = _currentPosition[4].ToString();
 
-            if (_currentPosition == "1 1 E")
-            {
-                var newOrientation = _rotateLeftFrom[currentOrientation];
-                var newPosition = string.Format("1 1 {0}", newOrientation);
-                _currentPosition = newPosition;
-            }
-            else if (_currentPosition == "1 1 S")
-            {
-                var newOrientation = _rotateLeftFrom[currentOrientation];
-                var newPosition = string.Format("1 1 {0}", newOrientation);
-                _currentPosition = newPosition;
-            }
-            else if (_currentPosition == "1 1 W")
-            {
-                var newOrientation = _rotateLeftFrom[currentOrientation];
-                var newPosition = string.Format("1 1 {0}", newOrientation);
-                _currentPosition = newPosition;
-            }
-
-            else if (_currentPosition == "1 1 N")
-            {
-                var newOrientation = _rotateLeftFrom[currentOrientation];
-                var newPosition = string.Format("1 1 {0}", newOrientation);
-                _currentPosition = newPosition;
-            }
+            var newOrientation = _rotateLeftFrom[currentOrientation];
+            var newPosition = string.Format("1 1 {0}", newOrientation);
+            _currentPosition = newPosition;
         }
 
         private void RotateRight()
