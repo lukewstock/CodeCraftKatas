@@ -59,25 +59,29 @@
             var south = "S";
             if (_currentPosition == string.Format("1 1 {0}", south))
             {
-                newPosition = "1 1 W";
+                var newOrientation = "W";
+                newPosition = string.Format("1 1 {0}", newOrientation);
             }
 
             var east = "E";
             if (_currentPosition == string.Format("1 1 {0}", east))
             {
-                newPosition = "1 1 S";
+                var newOrientation = "S";
+                newPosition = string.Format("1 1 {0}", newOrientation);
             }
 
             var north = "N";
             if (_currentPosition == string.Format("1 1 {0}", north))
             {
-                newPosition = "1 1 E";
+                var newOrientation = "E";
+                newPosition = string.Format("1 1 {0}", newOrientation);
             }
 
             var west = "W";
             if (_currentPosition == string.Format("1 1 {0}", west))
             {
-                newPosition = "1 1 N";
+                var newOrientation = "N";
+                newPosition = string.Format("1 1 {0}", newOrientation);
             }
 
             _currentPosition = newPosition;
