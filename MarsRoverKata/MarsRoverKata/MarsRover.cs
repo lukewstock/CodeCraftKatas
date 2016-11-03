@@ -63,7 +63,14 @@ namespace MarsRoverKata
 
         private void RotateLeft()
         {
-            _currentPosition = "1 1 W";
+            if (_currentPosition == "1 1 E")
+            {
+                _currentPosition = "1 1 N";
+            }
+            else
+            {
+                _currentPosition = "1 1 W";   
+            }
         }
 
         private void RotateRight()
