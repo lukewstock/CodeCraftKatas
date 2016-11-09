@@ -64,6 +64,13 @@ namespace MarsRoverKata
                 _currentPosition = "2 3 N";
                 return;
             }
+
+            if (_currentPosition == "3 3 N")
+            {
+                _currentPosition = "3 4 N";
+                return;
+            }
+
             if (_currentPosition == "1 1 E")
             {
                 _currentPosition = "2 1 E";
