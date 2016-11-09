@@ -59,11 +59,13 @@ namespace MarsRoverKata
 
         private void MoveForwardOneSpace()
         {
-            if (_currentPosition.EndsWith(NORTH))
+            var currentX =  int.Parse(_currentPosition[0].ToString());
+            var currentY = int.Parse(_currentPosition[2].ToString());
+
+            if (IsFacingNorth())
             {
-                var y = MoveOneNorth();
-                var currentX =  int.Parse(_currentPosition[0].ToString());
-                _currentPosition = string.Format("{1} {0} N", y, currentX);
+                var y = currentY + 1;
+                _currentPosition = string.Format("{0} {1} {2}", currentX, y, NORTH);
             }
             else
             {
@@ -71,11 +73,9 @@ namespace MarsRoverKata
             }
         }
 
-        private int MoveOneNorth()
+        private bool IsFacingNorth()
         {
-            var currentY = int.Parse(_currentPosition[2].ToString());
-            var y = currentY + 1;
-            return y;
+            return _currentPosition.EndsWith(NORTH);
         }
 
         private void RotateLeft()
