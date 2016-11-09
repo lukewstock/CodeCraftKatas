@@ -62,19 +62,19 @@ namespace MarsRoverKata
             if (_currentPosition == string.Format("2 2 {0}", NORTH))
             {
                 var y = MoveOneNorth();
-                var currentX = _currentPosition[0].ToString();
+                var currentX =  int.Parse(_currentPosition[0].ToString());
                 _currentPosition = string.Format("{1} {0} N", y, currentX);
             }
             else if (_currentPosition == string.Format("3 3 {0}", NORTH))
             {
                 var y = MoveOneNorth();
-                var currentX = _currentPosition[0].ToString();
+                var currentX =  int.Parse(_currentPosition[0].ToString());
                 _currentPosition = string.Format("{1} {0} N", y, currentX);
             }
             else if (_currentPosition == string.Format("1 1 {0}", NORTH))
             {
                 var y = MoveOneNorth();
-                var currentX = _currentPosition[0].ToString();
+                var currentX =  int.Parse(_currentPosition[0].ToString());
                 _currentPosition = string.Format("{1} {0} N", y, currentX);
             }
             else
