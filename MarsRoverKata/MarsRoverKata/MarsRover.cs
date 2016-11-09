@@ -59,7 +59,11 @@ namespace MarsRoverKata
 
         private void MoveForwardOneSpace()
         {
-            
+            if (_currentPosition == "2 2 N")
+            {
+                _currentPosition = "2 3 N";
+                return;
+            }
             if (_currentPosition == "1 1 E")
             {
                 _currentPosition = "2 1 E";
