@@ -61,7 +61,8 @@ namespace MarsRoverKata
         {
             if (_currentPosition == string.Format("2 2 {0}", NORTH))
             {
-                var y = "3";
+                var currentY = int.Parse(_currentPosition[2].ToString());
+                var y = currentY + 1;
                 _currentPosition = string.Format("2 {0} N", y);
             }
             else if (_currentPosition == string.Format("3 3 {0}", NORTH))
